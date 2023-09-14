@@ -1,9 +1,7 @@
 # abb-egm-with-python
-A script that allows for interfacing with ABB's Externally Guided Motion (EGM) option in python
+A script that allows for interfacing with ABB's Externally Guided Motion (EGM) option in python. This repo contains the files needed to get EGM communication working with an ABB robot controller. 
 
-
-This repo contains the files needed to get EGM communication working with an ABB robot controller. 
-
+## Python Setup
 The main file is PythonEGM.py. This script sets up a UDP listening client to receive and deserialize the EGM messages from the controller. It also includes examples of assembling and serializing Position Guidance messages and Path Correction messages to sent back to the controller for those applications.
 
 
@@ -21,9 +19,9 @@ This particular setup uses UDP to continuously send and receive messages. More i
 
 
 
-
+## Controller Setup
 Necessary setup to prepare ABB Controller for EGM:
-
+```
 Configuration:
 	-Motion
 		-External Motion Interface Data
@@ -35,7 +33,7 @@ Configuration:
 		-Type: must turn type to UDPUC standard
 		-Remote Address: The ip address of the sensor(computer)
 		-Remote Port Number: The port number of the sensor(computer)
-
+```
 
 
 An example RAPID module is included for position streaming. For examples using Position Guidance or Path Correction, as well as information on EGM RAPID commands and general setup information consult the ABB EGM manual: https://library.e.abb.com/public/4c9bfa6a4e9542bf9386c87f5377a27f/3HAC073319%20AM%20Externally%20Guided%20Motion%20RW6-en.pdf?x-sign=W42ZwkRuP3q1Dr78NoMTFHI0DdPMmb7ezINcsvqB/Ij7YxK7rdtzREC7RSoHvQJW  
