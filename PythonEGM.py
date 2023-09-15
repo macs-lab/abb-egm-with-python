@@ -21,32 +21,32 @@ robot_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 robot_socket.bind((computer_ip, robot_port))
 
 
-def CreateSensorMessage(egmSensor):
+def CreateSensorMessage(egmSensor, pos, quat):
     headerOne=egmSensor.header
     headerOne.seqno=num
     headerOne.mtype=egm.EgmHeader.MessageType.MSGTYPE_CORRECTION
     
     
     
-    #to change pos and orientation of robot, change values below
+    #to change the position and/or orientation of the robot, change values of input vectors
     planned=egmSensor.planned
     pose=planned.cartesian
-    pos=pose.pos
-    quat=pose.orient
-    pos.x=100.0
-    pos.y=0.0
-    pos.z=300.0
+    Position=pose.pos
+    Quaternion=pose.orient
+    Position.x=pos[0]
+    Position.y=pos[1]
+    Position.z=pos[2]
     
-    quat.u0=1.0
-    quat.u1=0.0
-    quat.u2=0.0 
-    quat.u3=0.0
+    Quaternion.u0=quat[0]
+    Quaternion.u1=quat[0]
+    Quaternion.u2=quat[0]
+    Quaternion.u3=quat[0]
     
     return egmSensor
 
 
 
-def CreateSensorPathCorr(egmPathCorr):   
+def CreateSensorPathCorr(egmPathCorr, pos):   
     
     #Create a header
     hdr = egmPathCorr.header
@@ -59,9 +59,9 @@ def CreateSensorPathCorr(egmPathCorr):
     pc = Corr.pos
 
     
-    pc.x = 0;
-    pc.y  = 0;
-    pc.z  = 10;
+    pc.x = pos[0];
+    pc.y  = pos[1];
+    pc.z  = pos[2];
 
     Corr.age=1
     
@@ -92,16 +92,19 @@ while True:
     ####Setup for message back to Robot Controller (see readme and EGM manual for specifics)####
     
     # #To create Position Guidance message
+    # Pos=[100,100,300] #[x,y,z] choords
+    # Quat=[1,0,0,0]= #[q0,q1,q2,q3] quaternion
     # egmSensor=egm.EgmSensor()
-    # egmSensor=CreateSensorMessage(egmSensor)
+    # egmSensor=CreateSensorMessage(egmSensor,Pos,Quat)
     
     # #To create Path Correction message 
+    # Pos=[0,0,20] # y,z adjustments off of the planned path
     # egmPathCorr=egm.EgmSensorPathCorr()
-    # egmPathCorr=CreateSensorPathCorr(egmPathCorr)
+    # egmPathCorr=CreateSensorPathCorr(egmPathCorr,Pos)
     
     
 
-    #To Serialize with protocol buffer and transmit message to Controller (either message type)
+    # #To Serialize with protocol buffer and transmit message to Controller (either message type)
     # mess=egmPathCorr.SerializeToString()
     # robot_socket.sendto(mess, addr)
     
