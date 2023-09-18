@@ -38,9 +38,9 @@ def CreateSensorMessage(egmSensor, pos, quat):
     Position.z=pos[2]
     
     Quaternion.u0=quat[0]
-    Quaternion.u1=quat[0]
-    Quaternion.u2=quat[0]
-    Quaternion.u3=quat[0]
+    Quaternion.u1=quat[1]
+    Quaternion.u2=quat[2]
+    Quaternion.u3=quat[3]
     
     return egmSensor
 
