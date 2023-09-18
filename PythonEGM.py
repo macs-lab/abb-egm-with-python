@@ -14,7 +14,7 @@ computer_ip= "127.0.0.1" #For simulation in robotstudio
 robot_port=6510
 num=0
 
-#Sets up a client to recieve UDP messages
+#Sets up a client to receive UDP messages
 robot_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 #Binds the client to listen on your IP and port (same as specified in Controller-Configuration-
