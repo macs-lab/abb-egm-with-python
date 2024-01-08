@@ -6,7 +6,9 @@ The main file is PythonEGM.py. This script sets up a UDP listening client to rec
 
 
 You must include the egm_pb2 file in the same file path as PythonEGM. This file contains the necessary information for the protocol buffer to serialize and deserialize messages based on the message structure in the .proto file.
-The raw egm.proto(found on ABB controller) file is included for reference. When compiled for use in python language the egm.proto file becomes egm_pb2.py.
+The raw egm.proto(found on ABB controller) file is included for reference. When compiled for use in Python language the egm.proto file becomes egm_pb2.py.
+
+You may need to install Protobuf and compile the .proto file yourself if the egm_pb2.py file is giving you issues.
 
 
 
