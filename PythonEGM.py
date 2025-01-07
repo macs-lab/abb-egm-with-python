@@ -26,8 +26,6 @@ def CreateSensorMessage(egmSensor, pos, quat):
     headerOne.seqno=num
     headerOne.mtype=egm.EgmHeader.MessageType.MSGTYPE_CORRECTION
     
-    
-    
     #to change the position and/or orientation of the robot, change values of input vectors
     planned=egmSensor.planned
     pose=planned.cartesian
@@ -93,7 +91,7 @@ while True:
     
     # #To create Position Guidance message
     # Pos=[100,100,300] #[x,y,z] choords
-    # Quat=[1,0,0,0]= #[q0,q1,q2,q3] quaternion
+    # Quat=[1,0,0,0] #[q0,q1,q2,q3] quaternion
     # egmSensor=egm.EgmSensor()
     # egmSensor=CreateSensorMessage(egmSensor,Pos,Quat)
     
@@ -102,10 +100,10 @@ while True:
     # egmPathCorr=egm.EgmSensorPathCorr()
     # egmPathCorr=CreateSensorPathCorr(egmPathCorr,Pos)
     
-    
-
     # #To Serialize with protocol buffer and transmit message to Controller (either message type)
+    # mess=egmSensor.SerializeToString()
     # mess=egmPathCorr.SerializeToString()
+    
     # robot_socket.sendto(mess, addr)
     
     num+=1
