@@ -90,7 +90,7 @@ while True:
     ####Setup for message back to Robot Controller (see readme and EGM manual for specifics)####
     
     # #To create Position Guidance message
-    # Pos=[100,100,300] #[x,y,z] choords
+    # Pos=[100,100,300] #[x,y,z] chords
     # Quat=[1,0,0,0] #[q0,q1,q2,q3] quaternion
     # egmSensor=egm.EgmSensor()
     # egmSensor=CreateSensorMessage(egmSensor,Pos,Quat)
