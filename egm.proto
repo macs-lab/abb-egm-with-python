@@ -57,7 +57,7 @@ message EgmPose					// Pose (i.e. cartesian position and Quaternion orientation)
 { 
     optional EgmCartesian	pos = 1;
     optional EgmQuaternion	orient = 2;
-	optional EgmEuler		euler = 3;
+    optional EgmEuler		euler = 3;
 } 
 
 message EgmCartesianSpeed 		// Array of 6 speed reference values in mm/s or degrees/s
