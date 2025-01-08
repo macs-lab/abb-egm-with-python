@@ -23,10 +23,13 @@ This particular setup uses UDP to continuously send and receive messages. More i
 
 ## Controller Setup
 Necessary setup to prepare ABB Controller for EGM:
+
+Make sure to add in the 689-1 Externally Guided Motion RobotWare option for the controller (if virtual), then go to the:
 ```
 Configuration:
 	-Motion
 		-External Motion Interface Data
+			-Create new External motion data with the following settings:
 			-Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance
 			-Position Gain:	determines motion responsiveness, higher values equal faster response (Position Guidance Only)
 			-Filter Bandwidth: value used to filter the speed contribution from EGM (Position Guidance Only)
@@ -38,9 +41,9 @@ Configuration:
 ```
 
 
-An example RAPID module is included for position streaming. For examples using Position Guidance or Path Correction, as well as information on EGM RAPID commands and general setup information consult the ABB EGM manual: https://library.e.abb.com/public/4c9bfa6a4e9542bf9386c87f5377a27f/3HAC073319%20AM%20Externally%20Guided%20Motion%20RW6-en.pdf?x-sign=W42ZwkRuP3q1Dr78NoMTFHI0DdPMmb7ezINcsvqB/Ij7YxK7rdtzREC7RSoHvQJW  
+An example RAPID module is included for position streaming. For examples using Position Guidance or Path Correction, as well as information on EGM RAPID commands and general setup information consult the appropriate ABB EGM manual for your Robotware version: [https://library.e.abb.com/public/4c9bfa6a4e9542bf9386c87f5377a27f/3HAC073319%20AM%20Externally%20Guided%20Motion%20RW6-en.pdf?x-sign=W42ZwkRuP3q1Dr78NoMTFHI0DdPMmb7ezINcsvqB/Ij7YxK7rdtzREC7RSoHvQJW  ](https://library.abb.com/r?dkg=dkg_instructions%20and%20manuals&q=EGM)
 
-Written with RobotWare 6.14 - Effectiveness may vary in other versions, but should work for most.
+Written with RobotWare 6.14
 
 
 Author: Jonas Beachy, University of Washington
