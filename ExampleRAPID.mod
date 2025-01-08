@@ -1,11 +1,11 @@
-MODULE EGMPositionStream
+MODULE EGMStreaming
     
     !***********************************************************    
     !
     ! Module: NDI_EGM
     !
     ! Description:
-    !   Returns position data for robot as it executes a predetermined path.
+    !   Streams position data for robot over EGM as it executes a predetermined path.
     !
     ! Author: Jonas Beachy, Boeing Advanced Research Center, University of Washington
     ! Version: 1.0
@@ -25,7 +25,6 @@ MODULE EGMPositionStream
   
     ! Work Object Data 
     TASK PERS wobjdata Example:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
-    
     
     VAR egmident egmID1;
     VAR egmstate egmSt1;
@@ -51,23 +50,24 @@ MODULE EGMPositionStream
 
         EGMReset egmID1;
         EGMGetId egmID1;
-        egmSt:=EGMGetState(egmID1);
-        TPWrite "EGM state: "\Num:=egmSt;
+        egmSt1:=EGMGetState(egmID1);
+        TPWrite "EGM state: "\Num:=egmSt1;
         
         IF egmSt1<=EGM_STATE_CONNECTED THEN
             !Configuration-Communication-Transmission Protocol: 
             !       Set IP address and Port for computer/sensor as well as device name
             !       In this case the device name is UCdevice, IP=127.0.0.1, Port=6510
-            EGMSetupUC ROB_1,egmID1,"default","UCdevice:"\Pose \CommTimeout:=10000;
+            EGMSetupUC ROB_1,egmID1,"default","UCdevice:" \Pose \CommTimeout:=10000;
         ENDIF
         
         !Stream position ever 4 ms
         EGMStreamStart egmID1\SampleRate:=4;
         Rob_Motion;
+        !For Position Guidance messages
         EGMStreamStop egmID1;
-        egmSt:=EGMGetState(egmID1);
+        egmSt1:=EGMGetState(egmID1);
         
-        IF egmSt=EGM_STATE_CONNECTED THEN
+        IF egmSt1=EGM_STATE_CONNECTED THEN
             TPWrite "Reset EGM instance egmID";
             EGMReset egmID1;  
         ENDIF
