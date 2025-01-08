@@ -29,7 +29,7 @@ Make sure to add in the 689-1 Externally Guided Motion RobotWare option for the 
 Configuration:
 	-Motion
 		-External Motion Interface Data
-			-Create new External motion data with the following settings
+			-Create new External motion data with the following settings:
 			-Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance
 			-Position Gain:	determines motion responsiveness, higher values equal faster response (Position Guidance Only)
 			-Filter Bandwidth: value used to filter the speed contribution from EGM (Position Guidance Only)
