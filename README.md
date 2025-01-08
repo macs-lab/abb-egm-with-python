@@ -4,7 +4,7 @@ A basic setup that allows for interfacing with ABB's Externally Guided Motion (E
 ## Python Setup
 The main file is PythonEGM.py. This script sets up a UDP listening client to receive and deserialize the EGM messages from the controller. It also includes examples of assembling and serializing Position Guidance messages and Path Correction messages to send back to the controller for those applications.
 
-You must include the egm_pb2.py file in the same folder as PythonEGM.py as this file contains the necessary information for the protocol buffer to serialize and deserialize messages based on the message structure in the .proto file. The raw egm.proto(found on ABB controller) structure file is included for reference. When compiled for use in Python language the egm.proto file becomes egm_pb2.py.
+You must include the egm_pb2.py file in the same folder as PythonEGM.py as this file contains the necessary information for the protocol buffer to serialize and deserialize messages based on the message structure in the .proto file. The raw egm.proto (found on ABB controller) structure file is included for reference. When compiled for use in Python language the egm.proto file becomes egm_pb2.py.
 
 You will need to install the python protobuf library, and may need to recompile the egm.proto file yourself if the egm_pb2.py file is giving you issues.
 
