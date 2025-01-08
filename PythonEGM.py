@@ -1,8 +1,11 @@
-# -*- coding: utf-8 -*-
+
 """
+
 Created on Wed Aug 30 12:50:49 2023
 
 @author: Jonas Beachy, University of Washington
+
+
 """
 
 
@@ -85,13 +88,13 @@ while True:
     
     print(f"SeqNum={Seq}, Time={Time}, X={CurX}, Y={CurY}, Z={CurZ}")
     
-    ####Setup for message back to Robot Controller (see readme and EGM manual for specifics)####
+    ####Setup for message back to Robot Controller for Position Guidance and Path Correction modes(see readme and EGM manual for specifics)####
     
     # #To create Position Guidance message
-    Pos=[100,100,300] #[x,y,z] chords
-    Quat=[1,0,0,0] #[q0,q1,q2,q3] quaternion
-    egmSensor=egm.EgmSensor()
-    egmSensor=CreateSensorMessage(egmSensor,Pos,Quat)
+    #Pos=[100,100,300] #[x,y,z] chords
+    #Quat=[1,0,0,0] #[q0,q1,q2,q3] quaternion
+    #egmSensor=egm.EgmSensor()
+    #egmSensor=CreateSensorMessage(egmSensor,Pos,Quat)
     
     # #To create Path Correction message 
     # Pos=[0,0,20] # y,z adjustments off of the planned path
@@ -99,10 +102,10 @@ while True:
     # egmPathCorr=CreateSensorPathCorr(egmPathCorr,Pos)
     
     # #To Serialize with protocol buffer and transmit message to Controller (either message type)
-    mess=egmSensor.SerializeToString()
+    #mess=egmSensor.SerializeToString()
     # mess=egmPathCorr.SerializeToString()
     
-    robot_socket.sendto(mess, addr)
+    #robot_socket.sendto(mess, addr)
     
     num+=1
 
