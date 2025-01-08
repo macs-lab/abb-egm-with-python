@@ -21,7 +21,7 @@ Motion
 	-External Motion Interface Data
 		-Create new External motion data with the following options:
 			-Name: This name is referenced in the rapid code as the ExtConfigName string when using the EGMStartupUC command to create the EGM connection
-			-Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance
+			-Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance or Position Streaming
 			-Position Gain:	determines motion responsiveness, higher values equal faster response (used with Position Guidance Only)
 			-Filter Bandwidth: value used to filter the speed contribution from EGM (used with Position Guidance Only)
 			-Ramp Time: determines how fast the speed should be ramped to zero after motion is complete (used with Position Guidance Only)
