@@ -105,3 +105,27 @@ while True:
     robot_socket.sendto(mess, addr)
     
     num+=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
