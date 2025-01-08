@@ -26,7 +26,7 @@ Motion
 			-Filter Bandwidth: value used to filter the speed contribution from EGM (used with Position Guidance Only)
 			-Ramp Time: determines how fast the speed should be ramped to zero after motion is complete (used with Position Guidance Only)
 ```				
-![alt text](Config_Motion.png)
+![alt text](imgs/Config_Motion.png)
 
 ```
 Communication
@@ -37,7 +37,7 @@ Communication
 			-Remote Address: The ip address of the sensor(computer)
 			-Remote Port Number: The port number of the sensor(computer)
 ```
-![alt text](Config_Coms.png)
+![alt text](imgs/Config_Coms.png)
 
 An example RAPID module is included for position streaming. For examples using Position Guidance or Path Correction, as well as information on EGM RAPID commands and general setup information consult the appropriate ABB EGM manual for your Robotware version: [https://library.e.abb.com/public/4c9bfa6a4e9542bf9386c87f5377a27f/3HAC073319%20AM%20Externally%20Guided%20Motion%20RW6-en.pdf?x-sign=W42ZwkRuP3q1Dr78NoMTFHI0DdPMmb7ezINcsvqB/Ij7YxK7rdtzREC7RSoHvQJW  ](https://library.abb.com/r?dkg=dkg_instructions%20and%20manuals&q=EGM)
 
