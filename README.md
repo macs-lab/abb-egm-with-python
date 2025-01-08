@@ -23,6 +23,8 @@ This particular setup uses UDP to continuously send and receive messages. More i
 
 ## Controller Setup
 Necessary setup to prepare ABB Controller for EGM:
+
+Make sure to add in the 689-1 Externally Guided Motion RobotWare option for the controller (if virtual), then go to the:
 ```
 Configuration:
 	-Motion
