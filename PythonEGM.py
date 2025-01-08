@@ -55,11 +55,9 @@ def CreateSensorPathCorr(egmPathCorr, pos):
     #create some sensor data for EGMPathCorr
     Corr = egmPathCorr.pathCorr
     pc = Corr.pos
-
-    
-    pc.x = pos[0];
-    pc.y  = pos[1];
-    pc.z  = pos[2];
+    pc.x = pos[0]
+    pc.y  = pos[1]
+    pc.z  = pos[2]
 
     Corr.age=1
     
@@ -86,6 +84,7 @@ while True:
     CurZ=message.feedBack.cartesian.pos.z
     
     print(f"SeqNum={Seq}, Time={Time}, X={CurX}, Y={CurY}, Z={CurZ}")
+
     
     ####Setup for message back to Robot Controller (see readme and EGM manual for specifics)####
     
