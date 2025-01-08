@@ -41,7 +41,7 @@ Configuration:
 ```
 
 
-An example RAPID module is included for position streaming. For examples using Position Guidance or Path Correction, as well as information on EGM RAPID commands and general setup information consult the ABB EGM manual: https://library.e.abb.com/public/4c9bfa6a4e9542bf9386c87f5377a27f/3HAC073319%20AM%20Externally%20Guided%20Motion%20RW6-en.pdf?x-sign=W42ZwkRuP3q1Dr78NoMTFHI0DdPMmb7ezINcsvqB/Ij7YxK7rdtzREC7RSoHvQJW  
+An example RAPID module is included for position streaming. For examples using Position Guidance or Path Correction, as well as information on EGM RAPID commands and general setup information consult the appropriate ABB EGM manual for your Robotware version: [https://library.e.abb.com/public/4c9bfa6a4e9542bf9386c87f5377a27f/3HAC073319%20AM%20Externally%20Guided%20Motion%20RW6-en.pdf?x-sign=W42ZwkRuP3q1Dr78NoMTFHI0DdPMmb7ezINcsvqB/Ij7YxK7rdtzREC7RSoHvQJW  ](https://library.abb.com/r?dkg=dkg_instructions%20and%20manuals&q=EGM)
 
 Written with RobotWare 6.14
 
