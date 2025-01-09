@@ -1,15 +1,9 @@
 MODULE EGMStreaming
     
-    !***********************************************************    
-    !
-    ! Module: NDI_EGM
-    !
+    !*********************************************************** 
     ! Description:
-    !   Streams position data for robot over EGM as it executes a predetermined path.
-    !
+    ! Streams position data for robot over EGM as it executes a predetermined path.
     ! Author: Jonas Beachy, Boeing Advanced Research Center, University of Washington
-    ! Version: 1.0
-    !
     !***********************************************************
     
     ! Starting "Home" Position and path target points
@@ -22,7 +16,6 @@ MODULE EGMStreaming
     
     ! Tool Data
     TASK PERS tooldata Dummy:=[TRUE,[[0,0,0],[1,0,0,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];
-  
     ! Work Object Data 
     TASK PERS wobjdata Example:=[FALSE,TRUE,"",[[0,0,0],[1,0,0,0]],[[0,0,0],[1,0,0,0]]];
     
@@ -34,20 +27,14 @@ MODULE EGMStreaming
     CONST egm_minmax egm_minmax_rot1:=[-2,2];
 
     !***********************************************************
-    !
     ! Procedure main
-    !
     !***********************************************************
    
     PROC main()
-        
-!        Rob_Motion;
         EGM_Proc;
-        
     ENDPROC
     
     PROC EGM_Proc()
-
         EGMReset egmID1;
         EGMGetId egmID1;
         egmSt1:=EGMGetState(egmID1);
@@ -60,10 +47,9 @@ MODULE EGMStreaming
             EGMSetupUC ROB_1,egmID1,"default","UCdevice:" \Pose \CommTimeout:=10000;
         ENDIF
         
-        !Stream position ever 4 ms
+        !Stream position every 4 ms
         EGMStreamStart egmID1\SampleRate:=4;
         Rob_Motion;
-        !For Position Guidance messages
         EGMStreamStop egmID1;
         egmSt1:=EGMGetState(egmID1);
         
@@ -71,7 +57,6 @@ MODULE EGMStreaming
             TPWrite "Reset EGM instance egmID";
             EGMReset egmID1;  
         ENDIF
-    
     ENDPROC
     
     PROC Rob_Motion()
