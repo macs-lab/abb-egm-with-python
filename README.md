@@ -1,5 +1,5 @@
 # abb-egm-with-python
-A basic setup that allows for interfacing with ABB's Externally Guided Motion (EGM) option in python. This repo contains the files needed to get EGM communication working with an ABB robot controller. 
+A basic setup that allows for interfacing with ABB's Externally Guided Motion (EGM) option in python. This repo contains the files needed to get EGM communication working with an ABB robot controller.
 
 ## Python Setup
 The main file is PythonEGM.py. This script sets up a UDP listening client to receive and deserialize the EGM messages from the controller. It also includes examples of assembling and serializing Position Guidance messages and Path Correction messages to send back to the controller for those applications.
@@ -21,7 +21,7 @@ Motion
 	-External Motion Interface Data
 		-Create new External motion data with the following options:
 			-Name: This name is referenced in the rapid code as the ExtConfigName string when using the EGMStartupUC command to create the EGM connection
-			-Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance
+			-Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance (any work with Position Stream)
 			-Position Gain:	determines motion responsiveness, higher values equal faster response (used with Position Guidance Only)
 			-Filter Bandwidth: value used to filter the speed contribution from EGM (used with Position Guidance Only)
 			-Ramp Time: determines how fast the speed should be ramped to zero after motion is complete (used with Position Guidance Only)
