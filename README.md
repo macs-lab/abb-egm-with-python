@@ -25,22 +25,22 @@ Make sure to add in the 689-1 Externally Guided Motion RobotWare option for the 
 Motion
  -External Motion Interface Data
  -Create new External motion data with the following options:
- -Name: This name is referenced in the rapid code as the ExtConfigName string when using the EGMStartupUC command to create the EGM connection
- -Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance (any work with Position Streaming)
- -Position Gain: determines motion responsiveness, higher values equal faster response (used with Position Guidance Only)
- -Filter Bandwidth: value used to filter the speed contribution from EGM (used with Position Guidance Only)
- -Ramp Time: determines how fast the speed should be ramped to zero after motion is complete (used with Position Guidance Only) ```             
+   -Name: This name is referenced in the rapid code as the ExtConfigName string when using the EGMStartupUC command to create the EGM connection
+   -Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance (any work with Position Streaming)
+   -Position Gain: determines motion responsiveness, higher values equal faster response (used with Position Guidance Only)
+   -Filter Bandwidth: value used to filter the speed contribution from EGM (used with Position Guidance Only)
+   -Ramp Time: determines how fast the speed should be ramped to zero after motion is complete (used with Position Guidance Only)            
 ```
 ![alt text](imgs/Config_Motion.png)
 
 ```  
 Communication
  - Transmission Protocol
- -May need to create a new transmission protocol with the following options:
- -Name: This name is referenced as the UCDevice name in the EGMStartupUC command
- -Type: must turn type to UDPUC standard
- -Remote Address: The IP address of the sensor(computer)
- -Remote Port Number: The port number of the sensor(computer)
+   -May need to create a new transmission protocol with the following options:
+   -Name: This name is referenced as the UCDevice name in the EGMStartupUC command
+   -Type: must turn type to UDPUC standard
+   -Remote Address: The IP address of the sensor(computer)
+   -Remote Port Number: The port number of the sensor(computer)
 ```
 ![alt text](imgs/Config_Coms.png)
 
