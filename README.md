@@ -1,8 +1,8 @@
 # abb-egm-with-python
 A basic setup that allows for interfacing with ABB's Externally Guided Motion (EGM) option in Python. This repo contains the files needed to get EGM communication working with an ABB robot controller. The EGM module allows for three separate modes:
 * Position Streaming - sends current (and planned) robot position and orientation data at speeds up to 250 Hz 
-* Position Guidance  - allows the user to write positions to the robot at a low level with very low latency at similar frequencies as Position Streaming (can be used with Position Streaming)
-* Path Correction    - allows the user to send corrections to a programmed path during path execution. Corrections can be supplied at roughly 20 Hz
+* Position Guidance - allows the user to write positions to the robot at a low level with very low latency at similar frequencies as Position Streaming (can be used with Position Streaming)
+* Path Correction - allows the user to send corrections to a programmed path during path execution. Corrections can be supplied at roughly 20 Hz
 
 While the best EGM mode for a project will vary based on the use case, This repo gives all the information needed to start Position Streaming and provides additional information and resources if Position Guidance or Path Correction are desired. 
 
