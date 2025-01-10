@@ -29,11 +29,11 @@ Motion
  -Level: must be set to Path for use with Path Correction, Raw or Filtered for Position Guidance (any work with Position Streaming)
  -Position Gain: determines motion responsiveness, higher values equal faster response (used with Position Guidance Only)
  -Filter Bandwidth: value used to filter the speed contribution from EGM (used with Position Guidance Only)
- -Ramp Time: determines how fast the speed should be ramped to zero after motion is complete (used with Position Guidance Only)
-```             
+ -Ramp Time: determines how fast the speed should be ramped to zero after motion is complete (used with Position Guidance Only) ```             
+```
 ![alt text](imgs/Config_Motion.png)
 
-```
+```  
 Communication
  - Transmission Protocol
  -May need to create a new transmission protocol with the following options:
