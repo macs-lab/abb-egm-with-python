@@ -4,7 +4,7 @@ A basic setup that allows for interfacing with ABB's Externally Guided Motion (E
 * Position Guidance - allows the user to write positions to the robot at a low level with very low latency at similar frequencies as Position Streaming (can be used with Position Streaming)
 * Path Correction - allows the user to send corrections to a programmed path during path execution. Corrections can be supplied at roughly 20 Hz
 
-While the best EGM mode for a project will vary based on the use case, This repo gives all the information needed to start Position Streaming and provides additional information and resources if Position Guidance or Path Correction are desired. 
+While the best EGM mode for a project will vary based on the use case, this repo gives all the information needed to start Position Streaming and provides additional information and resources if Position Guidance or Path Correction are desired. 
 
 ## Python Setup
 The main file is PythonEGM.py. This script sets up a UDP listening client to receive and deserialize the EGM messages from the controller. It also includes examples of assembling and serializing Position Guidance messages and Path Correction messages to send back to the controller for those applications.
